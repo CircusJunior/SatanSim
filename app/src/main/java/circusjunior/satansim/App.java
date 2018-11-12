@@ -1,4 +1,6 @@
 package circusjunior.satansim;
 
-public class App {
+
+public final class App {
+
 }

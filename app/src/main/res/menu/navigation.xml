@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_cataclysm"
+        android:title="@string/title_cataclysm"/>
+
+    <item
+        android:id="@+id/navigation_temptation"
+        android:title="@string/title_temptation"/>
+
+    <item
+        android:id="@+id/navigation_apocalipsys"
+        android:title="@string/title_apocalipsys"/>
+
+</menu>

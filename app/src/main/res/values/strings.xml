@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SatanSim</string>
+    <string name="title_activity_cataclysm">CataclysmActivity</string>
+    <string name="title_cataclysm">Cataclysm</string>
+    <string name="title_temptation">Temptation</string>
+    <string name="title_apocalipsys">Apocalipsys</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
