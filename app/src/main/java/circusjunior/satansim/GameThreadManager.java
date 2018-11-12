@@ -13,6 +13,5 @@ public class GameThreadManager {
         ActiveEventList activeEventList = ActiveEventList.getInstance();
         Event event = new TestEvent();
         activeEventList.addToEventList(event);
-        gameThread.run();
     }
 }

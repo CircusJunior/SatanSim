@@ -48,6 +48,7 @@ public class CataclysmActivity extends AppCompatActivity {
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                cataclysmPresenter = new CataclysmPresenter();
                 cataclysmPresenter.testHard();
             }
         });

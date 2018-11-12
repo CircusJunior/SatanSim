@@ -23,9 +23,12 @@ public class GameThread implements Runnable {
     @Override
     public void run() {
         try {
-            for(Iterator<Event> eventIterator = ActiveEventList.getIterator(); eventIterator.hasNext();){
-                Event event = eventIterator.next();
-                event.activateEvent();
+            while(true){
+                for(Iterator<Event> eventIterator = ActiveEventList.getIterator(); eventIterator.hasNext();) {
+                    Event event = eventIterator.next();
+                    event.activateEvent();
+                    Thread.sleep(1000);
+                }
             }
         } catch (Exception e) {
             System.out.println("Game Thread interrupted" + e.getMessage());
