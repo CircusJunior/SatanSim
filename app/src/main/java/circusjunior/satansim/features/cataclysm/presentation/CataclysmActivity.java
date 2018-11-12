@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import circusjunior.satansim.R;
 
@@ -12,6 +14,7 @@ import circusjunior.satansim.R;
 public class CataclysmActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private CataclysmPresenter cataclysmPresenter;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -37,10 +40,17 @@ public class CataclysmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cataclysm);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
+        
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        Button testButton = (Button)findViewById(R.id.test);
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cataclysmPresenter.testHard();
+            }
+        });
     }
 
 }
