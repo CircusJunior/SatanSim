@@ -1,14 +1,16 @@
 package circusjunior.satansim.dataGlobal;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class ActiveEventList implements EventIterator {
+public class ActiveEventList implements EventListInterface{
 
-    private ArrayList<Event> entityList;
+    private ArrayList<Event> eventList;
     private static ActiveEventList _instance = null;
+    private int activeIndex = 0;
 
     private ActiveEventList(){
-        entityList = new ArrayList<Event>() {
+        eventList = new ArrayList<Event>() {
         };
     }
 
@@ -24,18 +26,26 @@ public class ActiveEventList implements EventIterator {
         return _instance;
     }
 
+    //EventListInterface
     @Override
-    public Event getNext() {
-        return null;
+    public void addToEventList(Event e){
+        eventList.add(e);
+    }
+    @Override
+    public void clearList(){
+        eventList.clear();
+    }
+    @Override
+    public void deleteElement(int id){
+        eventList.remove(id);
     }
 
-    @Override
-    public Boolean hasNext() {
-        return null;
+    private Iterator<Event> getIteratorInstance(){
+        return eventList.iterator();
     }
 
-    @Override
-    public void reset() {
-
+    public static Iterator<Event> getIterator(){
+        return ActiveEventList.getInstance().getIteratorInstance();
     }
+
 }
