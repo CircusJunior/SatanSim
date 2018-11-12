@@ -1,7 +1,7 @@
 package circusjunior.satansim.dataGlobal;
 
-public interface EntityIterator {
-    Entity getNext();
+public interface EventIterator {
+    Event getNext();
     Boolean hasNext();
     void reset();
 }
