@@ -1,6 +1,6 @@
-package circusjunior.satansim.dataGlobal;
+package circusjunior.satansim.dataGlobal.Interface;
 
-import java.util.Iterator;
+import circusjunior.satansim.dataGlobal.Evnets.Event;
 
 public interface EventListInterface {
     void addToEventList(Event e);
