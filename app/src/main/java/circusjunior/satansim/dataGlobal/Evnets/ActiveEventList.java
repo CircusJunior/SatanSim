@@ -1,13 +1,14 @@
-package circusjunior.satansim.dataGlobal;
+package circusjunior.satansim.dataGlobal.Evnets;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class ActiveEventList implements EventListInterface{
+import circusjunior.satansim.dataGlobal.Interface.EventListInterface;
+
+public class ActiveEventList implements EventListInterface {
 
     private ArrayList<Event> eventList;
     private static ActiveEventList _instance = null;
-    private int activeIndex = 0;
 
     private ActiveEventList(){
         eventList = new ArrayList<Event>() {
@@ -28,15 +29,15 @@ public class ActiveEventList implements EventListInterface{
 
     //EventListInterface
     @Override
-    public void addToEventList(Event e){
+    public synchronized void addToEventList(Event e){
         eventList.add(e);
     }
     @Override
-    public void clearList(){
+    public synchronized void clearList(){
         eventList.clear();
     }
     @Override
-    public void deleteElement(int id){
+    public synchronized void deleteElement(int id){
         eventList.remove(id);
     }
 

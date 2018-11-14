@@ -1,4 +1,4 @@
-package circusjunior.satansim.dataGlobal;
+package circusjunior.satansim.dataGlobal.Evnets;
 
 public abstract class Event  {
     public abstract void activateEvent();
