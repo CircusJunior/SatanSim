@@ -16,35 +16,12 @@ public class CataclysmActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private CataclysmPresenter cataclysmPresenter;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case circusjunior.satansim.R.id.navigation_cataclysm:
-                    mTextMessage.setText(R.string.title_cataclysm);
-                    return true;
-                case R.id.navigation_temptation:
-                    mTextMessage.setText(R.string.title_temptation);
-                    return true;
-                case R.id.navigation_apocalipsys:
-                    mTextMessage.setText(R.string.title_apocalipsys);
-                    return true;
-            }
-            return false;
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cataclysm);
-        
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        Button testButton = (Button)findViewById(R.id.test);
+        Button testButton = (Button)findViewById(R.id.cataclism_catastrofe_1);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
