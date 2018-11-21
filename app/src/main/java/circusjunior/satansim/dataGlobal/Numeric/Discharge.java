@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Discharge {
     public static final int DIS_VALUE = 1000;
-    public static final String HUNDRED ="Soul";
+    public static final String HUNDRED ="";
     public static final String THOUSAND ="K";
     public static final String MILLION = "M";
     public static final String TRILLION = "T";

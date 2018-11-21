@@ -15,13 +15,6 @@ public class CataclysmActivity extends AppCompatActivity {
 
     private int n = 5;
 
-    private Button[] bCataclismCatastrofe;
-    private int[] butonCataclismIds = {R.id.cataclism_catastrofe_1, R.id.cataclism_catastrofe_2,
-            R.id.cataclism_catastrofe_3, R.id.cataclism_catastrofe_4, R.id.cataclism_catastrofe_5};
-
-    private Button[] bCataclismCatastrofeUpdate;
-    private int[] butonCataclismUpdateIds = {R.id.cataclism_catastrofeUpdate_1, R.id.cataclism_catastrofeUpdate_2,
-            R.id.cataclism_catastrofeUpdate_3, R.id.cataclism_catastrofeUpdate_4, R.id.cataclism_catastrofeUpdate_5};
 
 
 @Override
@@ -29,21 +22,7 @@ public class CataclysmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cataclysm);
 
-        bCataclismCatastrofe = new Button[n];
-        bCataclismCatastrofeUpdate = new Button[n];
 
-        for(int i=0; i<n; i++) {
-            bCataclismCatastrofe[i] = (Button) findViewById(butonCataclismIds[i]);
-            bCataclismCatastrofeUpdate[i] =(Button) findViewById(butonCataclismUpdateIds[i]);
-        }
-
-        bCataclismCatastrofe[0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cataclysmPresenter = new CataclysmPresenter();
-                cataclysmPresenter.testHard();
-            }
-        });
 
     }
 
