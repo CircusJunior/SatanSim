@@ -9,7 +9,7 @@ import circusjunior.satansim.dataGlobal.Valuta.Valuta;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
 
 public class SacrificeEvent extends CataclysmEvent  {
-    private int timeRemaining =0;
+    private int timeRemaining =15;
     private final int timer=15;
     DifficultInt cost;
 

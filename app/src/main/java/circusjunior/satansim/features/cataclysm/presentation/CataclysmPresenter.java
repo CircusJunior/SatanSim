@@ -1,56 +1,36 @@
 package circusjunior.satansim.features.cataclysm.presentation;
 
 
+import org.w3c.dom.NamedNodeMap;
+
 import java.util.ArrayList;
 
 import circusjunior.satansim.GameThreadManager;
+import circusjunior.satansim.dataGlobal.Valuta.SoulValuta;
 import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
+import circusjunior.satansim.features.cataclysm.Interface.ValutaInterface;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
-import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
+import circusjunior.satansim.features.cataclysm.domain.model.CataclysmManager;
 
-public final class CataclysmPresenter extends MvpPresenter<ActivityView> implements CataclysmManagerInterface {
-    private GameThreadManager gameTM;
-
-    public void testHard() {
-        gameTM.GameTreadTest();
-    }
+public final class CataclysmPresenter extends MvpPresenter<ActivityView>  {
+    private CataclysmManagerInterface managerInterface = CataclysmManager.getInstance();
+    private ValutaInterface soulValuta = SoulValuta.get_instance();
 
     public void goToCataclysmChoiceActivity(int slot) {
-        view.hideActivity("Cataclysm", slot);
+        view.hideActivity("CataclysmActivity", slot);
     }
 
-    @Override
+    public void goToCataclysmActivity(int slot, String name) {
+        view.hideActivity("CataclysmChoiceActivity", slot, name);
+    }
+
     public String createCataclysm(String type, String name, int slot) {
-        return null;
+        managerInterface.createCataclysm(type, name, slot);
+        managerInterface.activeCataclytsm(type,slot);
+        return name;
     }
 
-    @Override
-    public void deleteCataclysm(String type, int slot) {
-
-    }
-
-    @Override
-    public CataclysmModel getCataclysm(String type, int slot) {
-        return null;
-    }
-
-    @Override
-    public boolean is_CataclysmActive(String type, int slot) {
-        return false;
-    }
-
-    @Override
-    public void activeCataclytsm(String type, int slot) {
-
-    }
-
-    @Override
-    public ArrayList<CataclysmModel> getAllCataclysmOfThisType(String type) {
-        return null;
-    }
-
-    @Override
-    public ArrayList<CataclysmModel> getAllActiveCataclysmOfThisType(String type) {
-        return null;
+    public String getCurrencySoul(){
+        return soulValuta.getViewValue();
     }
 }

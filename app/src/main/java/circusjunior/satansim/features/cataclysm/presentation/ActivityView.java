@@ -10,5 +10,7 @@ public interface ActivityView extends MvpView {
 
     void hideActivity(String active, int slot);
 
+    void hideActivity(String active, int slot, String name);
+
     void exitActivity();
 }

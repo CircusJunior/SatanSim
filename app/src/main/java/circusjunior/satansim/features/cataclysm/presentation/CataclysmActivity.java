@@ -6,8 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import circusjunior.satansim.R;
+import circusjunior.satansim.dataGlobal.GameThread;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
+
+import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEnum;
 
 
 public class CataclysmActivity extends BaseActivity implements ActivityView {
@@ -27,6 +30,8 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cataclysm);
 
+        GameThread.get_instance();
+
         initView();
     }
 
@@ -35,9 +40,18 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
 
         currencySoul = (TextView) findViewById(R.id.currency_soul);
 
+        currencySoul.setText(cataclysmPresenter.getCurrencySoul());
+
+        Intent intent = getIntent();
+
         for(int i=0; i<buttonCataclysmQuantity; i++)
         {
+            final int slot = intent.getIntExtra("Slot", i);
+            final String name = intent.getStringExtra("Name"+Integer.toString(i));
+
             buttonCataclysm[i] = (Button) findViewById(buttonCataclysmId[i]);
+            buttonCataclysm[i].setText(name);
+
             final int finalI = i;
             buttonCataclysm[i].setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -51,6 +65,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
     }
 
     public void refreshInfoActivity() {    //обновление информации
+        currencySoul.setText(cataclysmPresenter.getCurrencySoul());
 
     }
 
@@ -69,8 +84,13 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         super.onStop();
         Intent intent = new Intent(CataclysmActivity.this, CataclysmChoiceActivity.class);
         intent.putExtra("Slot", slot);
-        intent.putExtra("Type", slot);
+        intent.putExtra("Type", CataclysmEnum.TYPE_RITUALS);
         startActivity(intent);
+    }
+
+    @Override
+    public void hideActivity(String active, int slot, String name) {
+
     }
 
     @Override

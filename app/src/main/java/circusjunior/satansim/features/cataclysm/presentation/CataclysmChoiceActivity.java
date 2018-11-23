@@ -14,6 +14,8 @@ import circusjunior.satansim.R;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
 import circusjunior.satansim.features.cataclysm.MvpView;
+import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEnum;
+import circusjunior.satansim.features.cataclysm.domain.model.CataclysmManager;
 
 public class CataclysmChoiceActivity extends BaseActivity implements ActivityView {
 
@@ -31,18 +33,20 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
     private void initView(){
 
         test = (Button) findViewById(R.id.test);
+        test.setText(CataclysmEnum.RITUALS_1);
 
         Intent intent = getIntent();
 
         final int slot = intent.getIntExtra("Slot", 0);
+        final String type = intent.getStringExtra("Type");
 
 
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-               // cataclysmPresenter.createCataclysm(,slot);
-
+                Button button = (Button)view;
+                cataclysmPresenter.goToCataclysmActivity(slot, cataclysmPresenter.createCataclysm(type, button.getText().toString(),slot));
             }
         });
 
@@ -81,7 +85,15 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
 
     @Override
     public void hideActivity(String active, int slot) {
+    }
 
+    @Override
+    public void hideActivity(String active, int slot, String name) {
+        super.onStop();
+        Intent intent = new Intent(CataclysmChoiceActivity.this, CataclysmActivity.class);
+        intent.putExtra("Slot", slot);
+        intent.putExtra("Name"+Integer.toString(slot), name);
+        startActivity(intent);
     }
 
     @Override

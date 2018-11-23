@@ -19,6 +19,11 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".features.cataclysm.presentation.CataclysmChoiceActivity"
+            android:label="CataclysmChoiceActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
 
     </application>
 
