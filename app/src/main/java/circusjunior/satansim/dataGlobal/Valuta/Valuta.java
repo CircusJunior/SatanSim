@@ -1,7 +1,7 @@
 package circusjunior.satansim.dataGlobal.Valuta;
 
 import circusjunior.satansim.dataGlobal.Numeric.DifficultInt;
-import circusjunior.satansim.dataGlobal.Interface.ValutaInterface;
+import circusjunior.satansim.features.cataclysm.Interface.ValutaInterface;
 
 public abstract class Valuta implements ValutaInterface {
     private String viewValue;

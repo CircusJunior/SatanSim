@@ -1,4 +1,4 @@
-package circusjunior.satansim.features.cataclysm.domain;
+package circusjunior.satansim.features.cataclysm.Interface;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package circusjunior.satansim.dataGlobal.Interface;
+package circusjunior.satansim.features.cataclysm.Interface;
 
 import circusjunior.satansim.dataGlobal.Numeric.DifficultInt;
 

@@ -4,8 +4,8 @@ package circusjunior.satansim.features.cataclysm.presentation;
 import java.util.ArrayList;
 
 import circusjunior.satansim.GameThreadManager;
+import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
-import circusjunior.satansim.features.cataclysm.domain.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
 
 public final class CataclysmPresenter extends MvpPresenter<ActivityView> implements CataclysmManagerInterface {

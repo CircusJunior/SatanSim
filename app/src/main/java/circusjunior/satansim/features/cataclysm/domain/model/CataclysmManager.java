@@ -3,7 +3,7 @@ package circusjunior.satansim.features.cataclysm.domain.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import circusjunior.satansim.features.cataclysm.domain.CataclysmManagerInterface;
+import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.domain.model.Interfaces.DavidStarInterface;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmFactory;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
@@ -97,5 +97,9 @@ public class CataclysmManager implements CataclysmManagerInterface {
             }
         }
         return array;
+    }
+
+    public void DeactivateCata(String ID){
+
     }
 }

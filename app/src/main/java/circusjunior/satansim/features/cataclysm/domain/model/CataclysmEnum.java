@@ -26,7 +26,11 @@ public class CataclysmEnum {
     };
 
     //Rituals
-    public static final  String RITUALS_SACRIFICE = "SACRIFICE";
+    public static final  String RITUALS_1 = "SACRIFICE";
+    public static final  String RITUALS_2 ="SADOM AND GAMORA";
+    public static final  String RITUALS_3 ="GREATE DEPRESSION";
+    public static final  String RITUALS_4 = "FRIDAY 13'TH";
+    public static final  String RITUALS_5 = "VALPURGES NIGHT";
     //Hunger
     //Plague
     //War

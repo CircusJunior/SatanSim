@@ -1,12 +1,16 @@
 package circusjunior.satansim.features.cataclysm.domain.model.cataclysms;
 
 import circusjunior.satansim.dataGlobal.Evnets.ActiveEventList;
-import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEvent;
+import circusjunior.satansim.dataGlobal.Evnets.Cataclysm.CataclysmEvent;
 
 public abstract class CataclysmModel {
     protected String id;
     protected CataclysmEvent event;
     protected boolean is_Active;
+
+    public void setIs_Active(boolean is_Active) {
+        this.is_Active = is_Active;
+    }
 
     public String getID(){
         return id;
@@ -23,6 +27,6 @@ public abstract class CataclysmModel {
     }
 
     public void deleteEvent(){
-
+        event.deleteEvent();
     }
 }

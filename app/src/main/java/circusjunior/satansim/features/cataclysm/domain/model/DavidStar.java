@@ -1,7 +1,5 @@
 package circusjunior.satansim.features.cataclysm.domain.model;
 
-import android.support.annotation.NonNull;
-
 import java.util.ArrayList;
 
 import circusjunior.satansim.features.cataclysm.domain.model.Interfaces.DavidStarInterface;

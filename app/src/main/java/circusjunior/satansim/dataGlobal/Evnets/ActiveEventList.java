@@ -36,9 +36,10 @@ public class ActiveEventList implements EventListInterface {
     public synchronized void clearList(){
         eventList.clear();
     }
+
     @Override
-    public synchronized void deleteElement(int id){
-        eventList.remove(id);
+    public synchronized void deleteElement(Event event){
+        eventList.remove(eventList.indexOf(event));
     }
 
     private Iterator<Event> getIteratorInstance(){
