@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
 
 public interface CataclysmManagerInterface {
+
         String createCataclysm(String type,String name,int slot); //return cataclysm id;
         void deleteCataclysm(String type,int slot);
         CataclysmModel getCataclysm(String type, int slot);
