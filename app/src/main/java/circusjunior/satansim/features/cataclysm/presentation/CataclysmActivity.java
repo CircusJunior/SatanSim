@@ -36,7 +36,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         for(int i=0; i<buttonCataclysmQuantity; i++)
         {
             buttonCataclysm[i] = (Button) findViewById(buttonCataclysmId[i]);
-            buttonCataclysm[0].setOnClickListener(new View.OnClickListener() {
+            buttonCataclysm[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cataclysmPresenter.goToCataclysmChoiceActivity();
