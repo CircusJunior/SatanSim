@@ -1,11 +1,5 @@
 package circusjunior.satansim.features.cataclysm.presentation;
 
-
-import org.w3c.dom.NamedNodeMap;
-
-import java.util.ArrayList;
-
-import circusjunior.satansim.GameThreadManager;
 import circusjunior.satansim.dataGlobal.Valuta.SoulValuta;
 import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.Interface.ValutaInterface;
