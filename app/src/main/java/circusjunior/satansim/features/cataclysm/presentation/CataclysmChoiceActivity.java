@@ -1,11 +1,14 @@
 package circusjunior.satansim.features.cataclysm.presentation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import java.util.prefs.PreferenceChangeEvent;
 
 import circusjunior.satansim.R;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
@@ -15,6 +18,7 @@ import circusjunior.satansim.features.cataclysm.MvpView;
 public class CataclysmChoiceActivity extends BaseActivity implements ActivityView {
 
     private Button test;
+    private CataclysmPresenter cataclysmPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +32,16 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
 
         test = (Button) findViewById(R.id.test);
 
+        Intent intent = getIntent();
+
+        final int slot = intent.getIntExtra("Slot", 0);
+
+
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+               // cataclysmPresenter.createCataclysm(,slot);
 
             }
         });
@@ -48,13 +59,14 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
     }
 
     @Override
-    protected <T extends MvpView> MvpPresenter<T> getPresenter() {
-        return null;
+    protected MvpPresenter<ActivityView> getPresenter() {
+        cataclysmPresenter = new CataclysmPresenter();
+        return cataclysmPresenter;
     }
 
     @Override
     protected ActivityView getMvpView() {
-        return null;
+        return this;
     }
 
     @Override
@@ -68,7 +80,7 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
     }
 
     @Override
-    public void hideActivity(String active) {
+    public void hideActivity(String active, int slot) {
 
     }
 

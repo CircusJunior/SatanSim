@@ -15,8 +15,8 @@ public final class CataclysmPresenter extends MvpPresenter<ActivityView> impleme
         gameTM.GameTreadTest();
     }
 
-    public void goToCataclysmChoiceActivity() {
-        view.hideActivity("Cataclysm");
+    public void goToCataclysmChoiceActivity(int slot) {
+        view.hideActivity("Cataclysm", slot);
     }
 
     @Override

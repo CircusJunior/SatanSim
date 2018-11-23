@@ -8,7 +8,7 @@ public interface ActivityView extends MvpView {
 
     void showError(String message);
 
-    void hideActivity(String active);
+    void hideActivity(String active, int slot);
 
     void exitActivity();
 }

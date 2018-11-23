@@ -20,6 +20,8 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
 
     private TextView currencySoul;
 
+    private String activeRiders;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +38,11 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         for(int i=0; i<buttonCataclysmQuantity; i++)
         {
             buttonCataclysm[i] = (Button) findViewById(buttonCataclysmId[i]);
+            final int finalI = i;
             buttonCataclysm[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    cataclysmPresenter.goToCataclysmChoiceActivity();
+                    cataclysmPresenter.goToCataclysmChoiceActivity(finalI);
                 }
             });
         }
@@ -62,9 +65,11 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
     }
 
     @Override
-    public void hideActivity(String active) {
+    public void hideActivity(String active, int slot) {
         super.onStop();
         Intent intent = new Intent(CataclysmActivity.this, CataclysmChoiceActivity.class);
+        intent.putExtra("Slot", slot);
+        intent.putExtra("Type", slot);
         startActivity(intent);
     }
 
