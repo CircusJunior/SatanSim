@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <arraya name="CircleBtton">
-        <attr name="cb_count" format="integer"/>
-    </arraya>
-</resources>
