@@ -1,7 +1,8 @@
 package circusjunior.satansim.features.cataclysm.presentation;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 import circusjunior.satansim.R;
 
 
@@ -9,6 +10,10 @@ public class CataclysmActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private CataclysmPresenter cataclysmPresenter;
+
+
+    private int n = 5;
+
 
 
 @Override

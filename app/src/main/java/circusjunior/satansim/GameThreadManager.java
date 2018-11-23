@@ -7,11 +7,14 @@ import circusjunior.satansim.dataGlobal.GameThread;
 import circusjunior.satansim.dataGlobal.Evnets.TestEvent;
 
 public class GameThreadManager {
-    private static int i=0;
-    public static void GameTreadTest(){
+    public static void GameTreadTest() {
         GameThread gameThread = GameThread.get_instance();
         ActiveEventList activeEventList = ActiveEventList.getInstance();
+        //for (int i = 0; i < 100; i++) {
             Event event = new TestEvent();
             activeEventList.addToEventList(event);
+
+        //}
+
     }
 }

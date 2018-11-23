@@ -8,6 +8,7 @@ public class SoulValuta extends Valuta {
         super();
     }
 
+
     public static synchronized SoulValuta get_instance(){
         if(_instance==null){
             synchronized (SoulValuta.class){

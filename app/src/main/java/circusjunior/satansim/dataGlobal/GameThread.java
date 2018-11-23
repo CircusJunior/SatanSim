@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 import circusjunior.satansim.dataGlobal.Evnets.ActiveEventList;
 import circusjunior.satansim.dataGlobal.Evnets.Event;
+import circusjunior.satansim.dataGlobal.Numeric.PerSecondCounter;
+import circusjunior.satansim.dataGlobal.Valuta.SoulValuta;
 
 public class GameThread implements Runnable {
     private static Thread economicalGameThread = null;
@@ -25,7 +27,6 @@ public class GameThread implements Runnable {
 
     @Override
     public void run() {
-
         System.out.println("Game Thread Start");
         try {
             while(true){
@@ -34,7 +35,10 @@ public class GameThread implements Runnable {
                     Event event = eventIterator.next();
                     event.activateEvent();
                 }
+                System.out.println("Test Event Activated: you have " + SoulValuta.get_instance().getViewValue()+" souls");
+                System.out.println(PerSecondCounter.get_instance().getActualValue()+"/per second");
                 Thread.sleep(1000);
+                PerSecondCounter.get_instance().reset();
             }
         } catch (Exception e) {
             System.out.println("Game Thread interrupted: " + e.toString()+'\n');
