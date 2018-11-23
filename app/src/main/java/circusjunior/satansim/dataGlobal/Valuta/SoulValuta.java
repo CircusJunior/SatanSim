@@ -20,9 +20,5 @@ public class SoulValuta extends Valuta {
     }
 
 
-    @Override
-    public boolean isEnough(DifficultInt cost) {
-        return false;
-    }
 
 }

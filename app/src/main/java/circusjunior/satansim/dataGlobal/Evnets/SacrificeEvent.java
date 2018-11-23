@@ -1,4 +1,4 @@
-package circusjunior.satansim.features.cataclysm.domain.model.cataclysms.Death;
+package circusjunior.satansim.dataGlobal.Evnets;
 
 import circusjunior.satansim.dataGlobal.Evnets.Event;
 import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEvent;

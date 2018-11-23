@@ -2,6 +2,7 @@ package circusjunior.satansim.features.cataclysm.domain.model.cataclysms.Death;
 
 import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEnum;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
+import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.Rituals.Sacrifice;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.TypedCataclysmFabric;
 
 public class DeathCataclysmFactory extends TypedCataclysmFabric {
@@ -13,10 +14,8 @@ public class DeathCataclysmFactory extends TypedCataclysmFabric {
     }
     private CataclysmModel create(String name){
         switch (name){
-            case CataclysmEnum.RITUALS_SACRIFICE:
-                return new Sacrifice();
+            default: return null;
         }
-        return null;
     }
 
 }

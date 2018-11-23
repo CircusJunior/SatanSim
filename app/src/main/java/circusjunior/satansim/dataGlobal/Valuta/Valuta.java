@@ -30,7 +30,9 @@ public abstract class Valuta implements ValutaInterface {
         valuteValue.minusInt(difficultInt);
     }
 
-    public abstract  boolean isEnough(DifficultInt cost);
+    public boolean isEnough(DifficultInt cost){
+        return false;
+    };
 
 
 }
