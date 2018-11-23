@@ -39,8 +39,8 @@
       <file leaf-file-name="CataclysmActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/circusjunior/satansim/features/cataclysm/presentation/CataclysmActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+            <state relative-caret-position="119">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1381#1586#0" expanded="true" />
@@ -2664,6 +2664,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Android Profiler" order="0" weight="0.32901135" />
@@ -3015,8 +3016,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/circusjunior/satansim/features/cataclysm/presentation/CataclysmActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        <state relative-caret-position="119">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1381#1586#0" expanded="true" />
