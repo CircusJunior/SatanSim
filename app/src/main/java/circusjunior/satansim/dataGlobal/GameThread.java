@@ -30,7 +30,6 @@ public class GameThread implements Runnable {
         System.out.println("Game Thread Start");
         try {
             while(true){
-                int i=0;
                 for(Iterator<Event> eventIterator = ActiveEventList.getIterator(); eventIterator.hasNext();) {
                     Event event = eventIterator.next();
                     event.activateEvent();
