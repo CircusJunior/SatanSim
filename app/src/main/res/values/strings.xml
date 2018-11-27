@@ -4,21 +4,25 @@
     <string name="title_cataclysm">Cataclysm</string>
     <string name="title_temptation">Temptation</string>
     <string name="title_apocalipsys">Apocalipsys</string>
-    <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
-    <string name="tab_cataclysm_1">Катастрофа</string>
-    <string name="tab_cataclysm_2">Люди</string>
-    <string name="tab_cataclysm_3">Война</string>
+    <!--Buttons-->
+    <string name="demons">Demons</string>
+    <string name="technology">Technology</string>
+    <string name="button">Button</string>
+    <string name="apocalypse">Apocalypse</string>
+    <string name="plague">Plague</string>
+    <string name="hunger">Hunger</string>
+    <string name="rituals">Rituals</string>
+    <string name="avatar">Avatar</string>
+    <string name="death">Death</string>
+    <string name="war">War</string>
 
-    <string name="cataclysm_Catastrofe_1">Пожар</string>
-    <string name="cataclysm_Catastrofe_2">Ураган</string>
-    <string name="cataclysm_Catastrofe_3">Наводнение</string>
-    <string name="cataclysm_Catastrofe_4">Цунами</string>
-    <string name="cataclysm_Catastrofe_5">Торнадо</string>
+    <!--Rituals-->
+    <string name="RITUALS_1">Sacrifice</string>
+    <string name="RITUALS_2">Sadom and Gamora</string>
+    <string name="RITUALS_3">Greate depression</string>
+    <string name="RITUALS_4">Friday 13#44th</string>
+    <string name="RITUALS_5">Valpurges night</string>
 
-    <string name="cataclysm_Catastrofe_Update">Усилить</string>
-    <string name="title_activity_attachment_swipe">AttachmentSwipe</string>
-    <string name="title_activity_app_swipe">AppSwipe</string>
 </resources>

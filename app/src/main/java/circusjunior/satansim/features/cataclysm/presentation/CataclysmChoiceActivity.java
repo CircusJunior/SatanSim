@@ -1,25 +1,22 @@
 package circusjunior.satansim.features.cataclysm.presentation;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
-
-import java.util.prefs.PreferenceChangeEvent;
 
 import circusjunior.satansim.R;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
-import circusjunior.satansim.features.cataclysm.MvpView;
 import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEnum;
-import circusjunior.satansim.features.cataclysm.domain.model.CataclysmManager;
 
 public class CataclysmChoiceActivity extends BaseActivity implements ActivityView {
 
-    private Button test;
+    private Button[] test;
+    private int[] testId = {R.id.test1, R.id.test2, R.id.test3, R.id.test4, R.id.test5};
+    private int testQuantity = 5;
+    private String[] testEnum = {CataclysmEnum.RITUALS_1, CataclysmEnum.RITUALS_2, CataclysmEnum.RITUALS_3, CataclysmEnum.RITUALS_4, CataclysmEnum.RITUALS_5};
+
     private CataclysmPresenter cataclysmPresenter;
 
     @Override
@@ -32,24 +29,7 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
 
     private void initView(){
 
-        test = (Button) findViewById(R.id.test);
-        test.setText(CataclysmEnum.RITUALS_1);
-
-        Intent intent = getIntent();
-
-        final int slot = intent.getIntExtra("Slot", 0);
-        final String type = intent.getStringExtra("Type");
-
-
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Button button = (Button)view;
-                cataclysmPresenter.goToCataclysmActivity(slot, cataclysmPresenter.createCataclysm(type, button.getText().toString(),slot));
-            }
-        });
-
+        initButton();
 
         /*// создание LinearLayout
         LinearLayout linLayout = new LinearLayout(this);
@@ -60,6 +40,33 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
         // устанавливаем linLayout как корневой элемент экрана
         setContentView(linLayout, linLayoutParam);*/
 
+    }
+
+    public void initButton(){
+        test = new Button[testQuantity];
+
+        Intent intent = getIntent();
+        final int slot = intent.getIntExtra("Slot", 0);
+        final String type = intent.getStringExtra("Type");
+
+        for(int i=0; i<testQuantity; i++)
+        {
+            test[i] = (Button) findViewById(testId[i]);
+            final String name = testEnum[i];
+
+            test[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Button button = (Button)view;
+                    cataclysmPresenter.fromCataclysmChoiceActivityGoToCataclysmActivity(slot, cataclysmPresenter.createCataclysm(type, name ,slot));
+                }
+            });
+        }
+        test[0].setText(R.string.RITUALS_1);
+        test[1].setText(R.string.RITUALS_2);
+        test[2].setText(R.string.RITUALS_3);
+        test[3].setText(R.string.RITUALS_4);
+        test[4].setText(R.string.RITUALS_5);
     }
 
     @Override

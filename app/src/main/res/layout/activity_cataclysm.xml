@@ -47,7 +47,7 @@
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginEnd="28dp"
-        app:layout_constraintEnd_toStartOf="@+id/mor_button"
+        app:layout_constraintEnd_toStartOf="@+id/plague_button"
         app:layout_constraintTop_toBottomOf="@+id/cataclism1_button" />
 
     <LinearLayout
@@ -120,11 +120,9 @@
         android:layout_height="73dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="120dp"
-        android:text="Демоны"
+        android:text="@string/demons"
         app:layout_constraintBottom_toTopOf="@+id/avatar_button"
-        app:layout_constraintEnd_toStartOf="@+id/cataclism1_button"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp" />
+        app:layout_constraintEnd_toStartOf="@+id/cataclism1_button" />
 
     <Button
         android:id="@+id/technology_button"
@@ -132,7 +130,7 @@
         android:layout_height="65dp"
         android:layout_marginStart="176dp"
         android:layout_marginBottom="128dp"
-        android:text="Технологии"
+        android:text="@string/technology"
         app:layout_constraintBottom_toTopOf="@+id/avatar_button"
         app:layout_constraintStart_toEndOf="@+id/demons_button" />
 
@@ -142,17 +140,17 @@
         android:layout_height="69dp"
         android:layout_marginTop="132dp"
         android:layout_marginEnd="116dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/apokalyos_button"
+        android:text="@string/button"
+        app:layout_constraintEnd_toStartOf="@+id/apocalypse_button"
         app:layout_constraintTop_toBottomOf="@+id/avatar_button" />
 
     <Button
-        android:id="@+id/apokalyos_button"
+        android:id="@+id/apocalypse_button"
         android:layout_width="99dp"
         android:layout_height="65dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="132dp"
-        android:text="Апокалипсис"
+        android:text="@string/apocalypse"
         app:layout_constraintStart_toEndOf="@+id/avatar_button"
         app:layout_constraintTop_toBottomOf="@+id/avatar_button" />
 
@@ -162,7 +160,6 @@
         android:layout_height="36dp"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="44dp"
-        android:text="Катклизм2"
         app:layout_constraintBottom_toTopOf="@+id/war_button"
         app:layout_constraintStart_toEndOf="@+id/avatar_button" />
 
@@ -172,9 +169,8 @@
         android:layout_height="73dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="92dp"
-        android:text="Катаклизм1"
         app:layout_constraintBottom_toTopOf="@+id/avatar_button"
-        app:layout_constraintEnd_toStartOf="@+id/mor_button" />
+        app:layout_constraintEnd_toStartOf="@+id/plague_button" />
 
     <Button
         android:id="@+id/cataclism5_button"
@@ -182,7 +178,6 @@
         android:layout_height="38dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="40dp"
-        android:text="Катклизм5"
         app:layout_constraintEnd_toStartOf="@+id/avatar_button"
         app:layout_constraintTop_toBottomOf="@+id/hunger_button" />
 
@@ -192,7 +187,6 @@
         android:layout_height="67dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="48dp"
-        android:text="Катаклизм4"
         app:layout_constraintEnd_toStartOf="@+id/ritual_button"
         app:layout_constraintTop_toBottomOf="@+id/death_button" />
 
@@ -202,16 +196,15 @@
         android:layout_height="68dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="28dp"
-        android:text="Катаклизм3"
         app:layout_constraintStart_toEndOf="@+id/ritual_button"
         app:layout_constraintTop_toBottomOf="@+id/war_button" />
 
     <Button
-        android:id="@+id/mor_button"
+        android:id="@+id/plague_button"
         android:layout_width="55dp"
         android:layout_height="51dp"
         android:layout_marginBottom="4dp"
-        android:text="Мор"
+        android:text="@string/plague"
         app:layout_constraintBottom_toTopOf="@+id/cataclism2_button"
         app:layout_constraintStart_toStartOf="@+id/cataclism2_button" />
 
@@ -221,7 +214,7 @@
         android:layout_height="44dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="48dp"
-        android:text="Голод"
+        android:text="@string/hunger"
         app:layout_constraintBottom_toTopOf="@+id/avatar_button"
         app:layout_constraintEnd_toStartOf="@+id/cataclism1_button" />
 
@@ -231,7 +224,7 @@
         android:layout_height="69dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
-        android:text="Ритуал"
+        android:text="@string/rituals"
         app:layout_constraintEnd_toEndOf="@+id/avatar_button"
         app:layout_constraintTop_toBottomOf="@+id/avatar_button" />
 
@@ -241,7 +234,7 @@
         android:layout_height="84dp"
         android:layout_marginTop="212dp"
         android:layout_marginEnd="148dp"
-        android:text="Аватар"
+        android:text="@string/avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -251,7 +244,7 @@
         android:layout_height="44dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
-        android:text="Смерть"
+        android:text="@string/death"
         app:layout_constraintEnd_toStartOf="@+id/avatar_button"
         app:layout_constraintTop_toTopOf="@+id/avatar_button" />
 
@@ -261,7 +254,7 @@
         android:layout_height="44dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:text="Война"
+        android:text="@string/war"
         app:layout_constraintStart_toEndOf="@+id/avatar_button"
         app:layout_constraintTop_toTopOf="@+id/avatar_button" />
 

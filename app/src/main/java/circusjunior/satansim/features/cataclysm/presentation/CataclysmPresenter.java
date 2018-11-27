@@ -10,11 +10,11 @@ public final class CataclysmPresenter extends MvpPresenter<ActivityView>  {
     private CataclysmManagerInterface managerInterface = CataclysmManager.getInstance();
     private ValutaInterface soulValuta = SoulValuta.get_instance();
 
-    public void goToCataclysmChoiceActivity(int slot) {
+    public void fromCataclysmActivityGoToCataclysmChoiceActivity(int slot) {
         view.hideActivity("CataclysmActivity", slot);
     }
 
-    public void goToCataclysmActivity(int slot, String name) {
+    public void fromCataclysmChoiceActivityGoToCataclysmActivity(int slot, String name) {
         view.hideActivity("CataclysmChoiceActivity", slot, name);
     }
 

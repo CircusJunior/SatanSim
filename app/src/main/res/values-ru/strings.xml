@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SatanSim</string>
+    <string name="title_activity_cataclysm">CataclysmActivity</string>
+    <string name="title_cataclysm">Cataclysm</string>
+    <string name="title_temptation">Temptation</string>
+    <string name="title_apocalipsys">Apocalipsys</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Buttons-->
+    <string name="demons">Демоны</string>
+    <string name="technology">Технологии</string>
+    <string name="button">Кнопка</string>
+    <string name="apocalypse">Апокалипсис</string>
+    <string name="plague">Чума</string>
+    <string name="hunger">Голод</string>
+    <string name="rituals">Ритуалы</string>
+    <string name="avatar">Аватар</string>
+    <string name="death">Смерть</string>
+    <string name="war">Война</string>
+
+    <!--Rituals-->
+    <string name="RITUALS_1">Жертвоприношение</string>
+    <string name="RITUALS_2">Садом и Гамораa</string>
+    <string name="RITUALS_3">Великая депресия</string>
+    <string name="RITUALS_4">Пятница 13-ое</string>
+    <string name="RITUALS_5">Вальпургеева ночь</string>
+
+</resources>

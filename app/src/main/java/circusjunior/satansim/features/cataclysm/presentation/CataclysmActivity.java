@@ -52,7 +52,6 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
     public void refreshInfoActivity(TextView soulView, CataclysmPresenter presenter) {    //обновление информации
         mRefresh = new ValutaRefresh();
         mRefresh.soulRefresh(soulView, presenter);
-
     }
 
     public void initButton(){
@@ -71,7 +70,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
             buttonCataclysm[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    cataclysmPresenter.goToCataclysmChoiceActivity(finalI);
+                    cataclysmPresenter.fromCataclysmActivityGoToCataclysmChoiceActivity(finalI);
                 }
             });
         }
