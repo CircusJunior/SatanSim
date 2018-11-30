@@ -1,4 +1,11 @@
 package circusjunior.satansim.dataGlobal.Evnets.timers;
 
-public class EventTimer {
+import java.util.TimerTask;
+
+public class  EventTimer extends TimerTask {
+
+    @Override
+    public void run() {
+
+    }
 }

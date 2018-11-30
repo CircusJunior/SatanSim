@@ -14,12 +14,12 @@ public class Discharge {
 
     public static final List<String> DISCHARGE_LIST = new ArrayList<String>(){
         {
+            add(HUNDRED);
             add(THOUSAND);
             add(MILLION);
             add(BILLION);
             add(TRILLION);
             add(QUADROLYON);
-            add(HUNDRED);
         }
     };
 

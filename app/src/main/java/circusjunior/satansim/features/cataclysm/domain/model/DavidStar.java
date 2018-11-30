@@ -2,6 +2,7 @@ package circusjunior.satansim.features.cataclysm.domain.model;
 
 import java.util.ArrayList;
 
+import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 import circusjunior.satansim.features.cataclysm.domain.model.Interfaces.DavidStarInterface;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
 
@@ -17,6 +18,10 @@ public class DavidStar implements DavidStarInterface {
         }
     }
 
+    public CataclysmModel[] getStarSlots(){
+        return cataclysms;
+    }
+
     @Override
     public CataclysmModel getCataBySlot(int slot) {
         return cataclysms[slot];
@@ -26,7 +31,7 @@ public class DavidStar implements DavidStarInterface {
     public CataclysmModel getCataByID(String id) {
         for (int i = 0; i < NUMBER_OF_CATACLYSM_IN_STAR; i++) {
             if (cataclysms[i] != null) {
-                if (cataclysms[i].getID().equals(id)) {
+                if (cataclysms[i].getName().equals(id)) {
                     return cataclysms[i];
                 }
             }
@@ -38,7 +43,7 @@ public class DavidStar implements DavidStarInterface {
     public int getSlotByCataID(String id) {
         for (int i = 0; i < NUMBER_OF_CATACLYSM_IN_STAR; i++) {
             if (cataclysms[i] != null) {
-                if (cataclysms[i].getID().equals(id)) {
+                if (cataclysms[i].getName().equals(id)) {
                     return i;
                 }
             }

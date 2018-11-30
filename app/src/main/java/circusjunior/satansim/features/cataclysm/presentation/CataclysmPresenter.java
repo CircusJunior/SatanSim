@@ -1,12 +1,10 @@
 package circusjunior.satansim.features.cataclysm.presentation;
 
-import android.support.v4.app.NotificationCompatSideChannelService;
-
 import circusjunior.satansim.dataGlobal.Valuta.SoulValuta;
 import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.Interface.ValutaInterface;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
-import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEnum;
+import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 import circusjunior.satansim.features.cataclysm.domain.model.CataclysmManager;
 
 public final class CataclysmPresenter extends MvpPresenter<ActivityView> {
@@ -35,15 +33,15 @@ public final class CataclysmPresenter extends MvpPresenter<ActivityView> {
         //!!!!!!!!!!!!!!!!!!метод смены всадников!!!!!!!!!!!!!!!!!!
         switch (type) {
             case 0:
-                return CataclysmEnum.TYPE_RITUALS;
+                return CataclysmEnum.TYPE_1;
             case 1:
-                return CataclysmEnum.TYPE_HUNGER;
+                return CataclysmEnum.TYPE_2;
             case 2:
-                return CataclysmEnum.TYPE_PLAGUE;
+                return CataclysmEnum.TYPE_3;
             case 3:
-                return CataclysmEnum.TYPE_WAR;
+                return CataclysmEnum.TYPE_4;
             case 4:
-                return CataclysmEnum.TYPE_DEATH;
+                return CataclysmEnum.TYPE_5;
             default: return "ERROR";
         }
     }
