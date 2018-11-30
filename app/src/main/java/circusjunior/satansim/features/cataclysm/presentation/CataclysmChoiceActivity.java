@@ -16,8 +16,7 @@ import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEnum;
 
 public class CataclysmChoiceActivity extends BaseActivity implements ActivityView {
 
-    private Button[] test;
-    private int[] testId = {R.id.test1, R.id.test2, R.id.test3, R.id.test4, R.id.test5};
+    private Button[] buttonCataclism;
     private int testQuantity = 5;
     private String[] testEnum = {CataclysmEnum.RITUALS_1, CataclysmEnum.RITUALS_2, CataclysmEnum.RITUALS_3, CataclysmEnum.RITUALS_4, CataclysmEnum.RITUALS_5};
 
@@ -48,7 +47,9 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
 
     public void initButton(LinearLayout root, ViewGroup.LayoutParams properties){
 
-        test = new Button[testQuantity];
+        //!!!!!!!!!!!!!!!!! все нужно в цикле!!!!!!!!!!!!!!!!!!!
+
+        buttonCataclism = new Button[testQuantity];
 
         Intent intent = getIntent();
         final int slot = intent.getIntExtra("Slot", 0);
@@ -56,24 +57,24 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
 
         for(int i=0; i<testQuantity; i++)
         {
-            test[i] = new Button(this);
-            test[i].setGravity(Gravity.CENTER);
-            root.addView(test[i], properties);
+            buttonCataclism[i] = new Button(this);
+            buttonCataclism[i].setGravity(Gravity.CENTER);
+            root.addView(buttonCataclism[i], properties);
             final String name = testEnum[i];
 
-            test[i].setOnClickListener(new View.OnClickListener() {
+            buttonCataclism[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Button button = (Button)view;
+                    //Button button = (Button)view;
                     cataclysmPresenter.fromCataclysmChoiceActivityGoToCataclysmActivity(slot, cataclysmPresenter.createCataclysm(type, name ,slot));
                 }
             });
         }
-        test[0].setText(R.string.RITUALS_1);
-        test[1].setText(R.string.RITUALS_2);
-        test[2].setText(R.string.RITUALS_3);
-        test[3].setText(R.string.RITUALS_4);
-        test[4].setText(R.string.RITUALS_5);
+        buttonCataclism[0].setText(R.string.RITUALS_1);
+        buttonCataclism[1].setText(R.string.RITUALS_2);
+        buttonCataclism[2].setText(R.string.RITUALS_3);
+        buttonCataclism[3].setText(R.string.RITUALS_4);
+        buttonCataclism[4].setText(R.string.RITUALS_5);
 
     }
 

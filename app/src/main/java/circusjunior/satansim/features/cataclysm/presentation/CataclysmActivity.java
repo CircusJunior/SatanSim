@@ -23,11 +23,14 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
     private int[] buttonCataclysmId = {R.id.cataclism1_button, R.id.cataclism2_button, R.id.cataclism3_button, R.id.cataclism4_button, R.id.cataclism5_button};
     private int buttonCataclysmQuantity = 5;
 
+    private Button[] buttonRiders;
+    private int[] buttonRidersId = {R.id.ritual_button,  R.id.hunger_button, R.id.plague_button, R.id.war_button, R.id.death_button};
+
     private TextView currencySoul;
 
-    private String activeRiders;
-
     private ValutaRefresh mRefresh;
+
+    private String mTypeCataclysm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         setContentView(R.layout.activity_cataclysm);
 
         GameThread.get_instance();
+
+        mTypeCataclysm = CataclysmEnum.TYPE_RITUALS;
 
         initView();
     }
@@ -55,6 +60,14 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
     }
 
     public void initButton(){
+
+        initCataclismButton();
+
+        initRidersButton();
+
+    }
+
+    public void initCataclismButton(){
         buttonCataclysm = new Button[buttonCataclysmQuantity];
         Intent intent = getIntent();
 
@@ -76,10 +89,45 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         }
     }
 
+    public void initRidersButton(){
+        buttonRiders = new Button[5];
+
+        for(int i=0; i<5; i++)
+        {
+            buttonRiders[i] = (Button) findViewById(buttonRidersId[i]);
+            final int type = i;
+            buttonRiders[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mTypeCataclysm = cataclysmPresenter.changeRider(type);
+                    changeActiveRider(type);
+                }
+            });
+        }
+
+        Button buttonRituals = (Button) findViewById(R.id.ritual_button);
+        buttonRituals.setEnabled(false);
+
+    }
+
+    public void changeActiveRider(int type){
+        for(int i=0; i<5;i++){
+            if(i == type){
+                buttonRiders[i].setEnabled(false);
+            } else {
+                buttonRiders[i].setEnabled(true);
+            }
+        }
+        //!!!!!!!!!!!!!!МЕТОД ОБНОВЛЕНИЯ АКТИВИТИ!!!!!!!!!!!!!!!!!!!!!
+
+    }
+
     @Override
     public void showView() {    //запрос состаяния активити на момент ее загрузки
         //currencySoul.setText();     //нужна функция вовращающая кол-во "soul" в формате string
     }
+
+
 
     @Override
     public void showError(String message) {
@@ -92,7 +140,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         mRefresh.stopRefresh();
         Intent intent = new Intent(CataclysmActivity.this, CataclysmChoiceActivity.class);
         intent.putExtra("Slot", slot);
-        intent.putExtra("Type", CataclysmEnum.TYPE_RITUALS);
+        intent.putExtra("Type", mTypeCataclysm);
         startActivity(intent);
     }
 
