@@ -2,8 +2,12 @@ package circusjunior.satansim.features.cataclysm.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import circusjunior.satansim.R;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
@@ -29,20 +33,21 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
 
     private void initView(){
 
-        initButton();
+        //Прогрммное создание View
+        LinearLayout rootLinLayout = new LinearLayout(this);
+        rootLinLayout.setOrientation(LinearLayout.VERTICAL);
 
-        /*// создание LinearLayout
-        LinearLayout linLayout = new LinearLayout(this);
-        // установим вертикальную ориентацию
-        linLayout.setOrientation(LinearLayout.VERTICAL);
-        // создаем LayoutParams
         ViewGroup.LayoutParams linLayoutParam = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        // устанавливаем linLayout как корневой элемент экрана
-        setContentView(linLayout, linLayoutParam);*/
+        setContentView(rootLinLayout, linLayoutParam);
+
+        ViewGroup.LayoutParams lpView = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        initButton(rootLinLayout, lpView);
 
     }
 
-    public void initButton(){
+    public void initButton(LinearLayout root, ViewGroup.LayoutParams properties){
+
         test = new Button[testQuantity];
 
         Intent intent = getIntent();
@@ -51,7 +56,9 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
 
         for(int i=0; i<testQuantity; i++)
         {
-            test[i] = (Button) findViewById(testId[i]);
+            test[i] = new Button(this);
+            test[i].setGravity(Gravity.CENTER);
+            root.addView(test[i], properties);
             final String name = testEnum[i];
 
             test[i].setOnClickListener(new View.OnClickListener() {
@@ -67,6 +74,7 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
         test[2].setText(R.string.RITUALS_3);
         test[3].setText(R.string.RITUALS_4);
         test[4].setText(R.string.RITUALS_5);
+
     }
 
     @Override
