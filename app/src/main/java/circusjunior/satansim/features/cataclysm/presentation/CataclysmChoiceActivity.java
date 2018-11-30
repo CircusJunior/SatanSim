@@ -7,12 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import circusjunior.satansim.R;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
-import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEnum;
+import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 
 public class CataclysmChoiceActivity extends BaseActivity implements ActivityView {
 

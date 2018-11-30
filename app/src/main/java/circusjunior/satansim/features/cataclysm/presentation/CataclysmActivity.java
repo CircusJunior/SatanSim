@@ -11,7 +11,7 @@ import circusjunior.satansim.dataGlobal.GameThread;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
 
-import circusjunior.satansim.features.cataclysm.domain.model.CataclysmEnum;
+import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 import circusjunior.satansim.features.cataclysm.presentation.timers.ValutaRefresh;
 
 
@@ -39,7 +39,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
 
         GameThread.get_instance();
 
-        mTypeCataclysm = CataclysmEnum.TYPE_RITUALS;
+        mTypeCataclysm = CataclysmEnum.TYPE_1;
 
         initView();
     }

@@ -13,6 +13,22 @@ public class DifficultInt {
         actualDischarge =Discharge.HUNDRED;
     }
 
+    /**
+     *
+     * @param args sequence of costs
+     */
+    public DifficultInt(int... args){
+        this();
+        int i=1;
+            for (String dis : Discharge.DISCHARGE_LIST) {
+                addInt(dis, args[args.length-i]);
+                i++;
+                if(i>args.length) break;
+            }
+    }
+
+
+
     private void refreshActualDischarge(){
         if(this.getDischarge(Discharge.getNext(actualDischarge))!=0){
             actualDischarge=Discharge.getNext(actualDischarge);

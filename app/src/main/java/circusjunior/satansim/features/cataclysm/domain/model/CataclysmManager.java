@@ -3,6 +3,7 @@ package circusjunior.satansim.features.cataclysm.domain.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.domain.model.Interfaces.DavidStarInterface;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmFactory;
@@ -31,9 +32,9 @@ public class CataclysmManager implements CataclysmManagerInterface {
         if(star.is_slotEmpty(slot)){
             CataclysmModel cata = CataclysmFactory.createCataclysm(type,name);
             star.insertCata(cata,slot);
-            return cata.getID();
+            return cata.getName();
         }else{
-            return star.getCataBySlot(slot).getID();
+            return star.getCataBySlot(slot).getName();
         }
     }
 
@@ -97,6 +98,11 @@ public class CataclysmManager implements CataclysmManagerInterface {
             }
         }
         return array;
+    }
+
+    @Override
+    public CataclysmModel[] getListCataclysmInSlots(String type) {
+        return starList.get(type).getStarSlots();
     }
 
     public void DeactivateCata(String ID){
