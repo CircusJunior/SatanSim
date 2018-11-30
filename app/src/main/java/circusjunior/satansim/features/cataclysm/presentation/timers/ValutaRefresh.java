@@ -33,4 +33,5 @@ public class ValutaRefresh {
     public void stopRefresh() {
         mTimer.cancel();
     }
+
 }

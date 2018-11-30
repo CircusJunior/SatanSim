@@ -21,12 +21,13 @@ public class CataclysmEvent extends Event {
         cost = new DifficultInt();
         this.parent=parent;
         timer = CataclysmTimers.getTimer(name);
-        cost = CataclysmProfit.getCost(name);
+        cost = CataclysmProfit.getProfit(name);
         timeRemaining=timer;
     }
 
     @Override
     public void activateEvent() {
+        System.out.println("Activate Cataclysm with name: "+name);
         if(timeRemaining==0){
             Valuta soul = SoulValuta.get_instance();
             soul.addValuta(cost);
@@ -40,5 +41,12 @@ public class CataclysmEvent extends Event {
     public void deleteEvent(){
         parent.setIs_Active(false);
         super.deleteEvent(this);
+    }
+
+    public int getTimeRemaining(){
+        return timeRemaining;
+    }
+    public int getTimer(){
+        return timer;
     }
 }

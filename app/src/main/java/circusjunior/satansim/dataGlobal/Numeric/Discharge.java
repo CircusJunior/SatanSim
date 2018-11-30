@@ -38,4 +38,20 @@ public class Discharge {
         }
         return "";
     }
+
+    public static String getPrev(String discharge){
+        switch (discharge){
+            case QUADROLYON:
+                return TRILLION;
+            case TRILLION:
+                return BILLION;
+            case BILLION:
+                return MILLION;
+            case MILLION:
+                return THOUSAND;
+            case THOUSAND:
+                return HUNDRED;
+        }
+        return "";
+    }
 }

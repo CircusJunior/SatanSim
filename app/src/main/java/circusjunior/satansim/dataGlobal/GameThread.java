@@ -34,7 +34,7 @@ public class GameThread implements Runnable {
                     Event event = eventIterator.next();
                     event.activateEvent();
                 }
-                System.out.println("Test Event Activated: you have " + SoulValuta.get_instance().getViewValue()+" souls");
+                System.out.println("Events Activated: you have " + SoulValuta.get_instance().getViewValue()+" souls");
                 System.out.println(PerSecondCounter.get_instance().getActualValue()+"/per second");
                 Thread.sleep(1000);
                 PerSecondCounter.get_instance().reset();

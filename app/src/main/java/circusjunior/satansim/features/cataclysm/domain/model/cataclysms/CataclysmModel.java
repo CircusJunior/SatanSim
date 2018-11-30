@@ -39,4 +39,11 @@ public class CataclysmModel {
     public void deleteEvent(){
         event.deleteEvent();
     }
+
+    public int getTimeRemaining(){
+        return event.getTimeRemaining();
+    }
+    public int getTime(){
+        return event.getTimer();
+    }
 }
