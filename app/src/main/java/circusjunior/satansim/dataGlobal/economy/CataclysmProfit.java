@@ -2,13 +2,13 @@ package circusjunior.satansim.dataGlobal.economy;
 
 import circusjunior.satansim.dataGlobal.Numeric.DifficultInt;
 
-public class CataclysmProfit extends CataclysmEnum {
+public abstract class CataclysmProfit extends CataclysmEnum {
     public static final DifficultInt RITUALS_DEFAULT_PROFIT = new DifficultInt(0);
-    public static final DifficultInt RITUALS_1_PROFIT = new DifficultInt(500);
-    public static final DifficultInt RITUALS_2_PROFIT = new DifficultInt(1,000);
-    public static final DifficultInt RITUALS_3_PROFIT = new DifficultInt(2,750);
-    public static final DifficultInt RITUALS_4_PROFIT = new DifficultInt(4,025);
-    public static final DifficultInt RITUALS_5_PROFIT = new DifficultInt(7,825);
+    public static final DifficultInt RITUALS_1_PROFIT = new DifficultInt(1);
+    public static final DifficultInt RITUALS_2_PROFIT = new DifficultInt(2);
+    public static final DifficultInt RITUALS_3_PROFIT = new DifficultInt(5);
+    public static final DifficultInt RITUALS_4_PROFIT = new DifficultInt(10);
+    public static final DifficultInt RITUALS_5_PROFIT = new DifficultInt(25);
 
     public static final DifficultInt getProfit(String name){
         switch(name){

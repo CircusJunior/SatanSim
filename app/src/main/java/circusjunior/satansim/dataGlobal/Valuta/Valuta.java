@@ -23,15 +23,17 @@ public abstract class Valuta implements ValutaInterface {
     }
 
     public synchronized void addValuta(DifficultInt difficultInt ){
-        synchronized (DifficultInt.class) {
+        synchronized (Valuta.class) {
             valuteValue.addInt(difficultInt);
         }
+        refreshViewValuta();
     }
 
     public synchronized void minusValuta(DifficultInt difficultInt){
-        synchronized (DifficultInt.class) {
+        synchronized (Valuta.class) {
         valuteValue.minusInt(difficultInt);
         }
+        refreshViewValuta();
     }
 
     public boolean isEnough(DifficultInt cost){

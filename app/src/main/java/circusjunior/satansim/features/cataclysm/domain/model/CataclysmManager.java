@@ -3,6 +3,8 @@ package circusjunior.satansim.features.cataclysm.domain.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import circusjunior.satansim.dataGlobal.Valuta.SoulValuta;
+import circusjunior.satansim.dataGlobal.economy.CataclysmCosts;
 import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.domain.model.Interfaces.DavidStarInterface;
@@ -28,14 +30,17 @@ public class CataclysmManager implements CataclysmManagerInterface {
 
     @Override
     public String createCataclysm(String type, String name, int slot) {
-        DavidStarInterface star = starList.get(type);
-        if(star.is_slotEmpty(slot)){
-            CataclysmModel cata = CataclysmFactory.createCataclysm(type,name);
-            star.insertCata(cata,slot);
-            return cata.getName();
-        }else{
-            return star.getCataBySlot(slot).getName();
+        if(SoulValuta.get_instance().isEnough(CataclysmCosts.getCost(name))) {
+            DavidStarInterface star = starList.get(type);
+            if (star.is_slotEmpty(slot)) {
+                CataclysmModel cata = CataclysmFactory.createCataclysm(type, name);
+                star.insertCata(cata, slot);
+                return cata.getName();
+            } else {
+                return star.getCataBySlot(slot).getName();
+            }
         }
+        return "";
     }
 
     @Override

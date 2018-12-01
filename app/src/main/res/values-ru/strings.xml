@@ -18,6 +18,14 @@
     <string name="death">Смерть</string>
     <string name="war">Война</string>
 
+
+    <!--Types-->
+    <string name="TYPE_1">Sacrifice</string>
+    <string name="TYPE_2">Sacrifice</string>
+    <string name="TYPE_3">Sacrifice</string>
+    <string name="TYPE_4">Sacrifice</string>
+    <string name="TYPE_5">Sacrifice</string>
+
     <!--Rituals-->
     <string name="RITUALS_1">Жертвоприношение</string>
     <string name="RITUALS_2">Садом и Гамораa</string>
@@ -25,4 +33,6 @@
     <string name="RITUALS_4">Пятница 13-ое</string>
     <string name="RITUALS_5">Вальпургеева ночь</string>
 
+
+    <string name="ERROR">ERROR</string>
 </resources>

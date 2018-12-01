@@ -18,6 +18,16 @@
     <string name="death">Death</string>
     <string name="war">War</string>
 
+
+
+    <!--Types-->
+    <string name="TYPE_1">Rituals</string>
+    <string name="TYPE_2">Hunger</string>
+    <string name="TYPE_3">Plague</string>
+    <string name="TYPE_4">War</string>
+    <string name="TYPE_5">Death</string>
+
+
     <!--Rituals-->
     <string name="RITUALS_1">Sacrifice</string>
     <string name="RITUALS_2">Sadom and Gamora</string>
@@ -25,4 +35,6 @@
     <string name="RITUALS_4">Friday 13#44th</string>
     <string name="RITUALS_5">Valpurges night</string>
 
+
+    <string name="ERROR">ERROR</string>
 </resources>

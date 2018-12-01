@@ -1,13 +1,13 @@
 package circusjunior.satansim.dataGlobal.economy;
 
-public class CataclysmTimers extends CataclysmEnum {
+public abstract class CataclysmTimers extends CataclysmEnum {
     //Rituals
     public static final int RITUALS_DEFAULT_TIMER=1;
     public static final int RITUALS_1_TIMER = 1;
     public static final int RITUALS_2_TIMER = 3;
-    public static final int RITUALS_3_TIMER = 8;
-    public static final int RITUALS_4_TIMER = 15;
-    public static final int RITUALS_5_TIMER = 20;
+    public static final int RITUALS_3_TIMER = 4;
+    public static final int RITUALS_4_TIMER = 8;
+    public static final int RITUALS_5_TIMER = 12;
 
 
     public static final int getTimer(String name){
