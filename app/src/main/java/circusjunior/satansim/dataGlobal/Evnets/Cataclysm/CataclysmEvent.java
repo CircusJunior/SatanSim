@@ -5,7 +5,7 @@ import circusjunior.satansim.dataGlobal.Numeric.DifficultInt;
 import circusjunior.satansim.dataGlobal.Numeric.PerSecondCounter;
 import circusjunior.satansim.dataGlobal.Valuta.SoulValuta;
 import circusjunior.satansim.dataGlobal.Valuta.Valuta;
-import circusjunior.satansim.dataGlobal.economy.CataclysmProfit;
+import circusjunior.satansim.dataGlobal.economy.CataclysmSoulProfit;
 import circusjunior.satansim.dataGlobal.economy.CataclysmTimers;
 import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
 
@@ -21,7 +21,7 @@ public class CataclysmEvent extends Event {
         cost = new DifficultInt();
         this.parent=parent;
         timer = CataclysmTimers.getTimer(name);
-        cost = CataclysmProfit.getProfit(name);
+        cost = CataclysmSoulProfit.getProfit(name);
         timeRemaining=timer;
     }
 

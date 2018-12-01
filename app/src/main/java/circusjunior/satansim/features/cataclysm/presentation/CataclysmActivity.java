@@ -39,7 +39,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
 
         GameThread.get_instance();
 
-        mTypeCataclysm = CataclysmEnum.TYPE_1;
+        mTypeCataclysm = CataclysmEnum.TYPE_RITUALS;
 
         initView();
     }

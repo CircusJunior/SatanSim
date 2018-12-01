@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import circusjunior.satansim.dataGlobal.Valuta.SoulValuta;
-import circusjunior.satansim.dataGlobal.economy.CataclysmCosts;
+import circusjunior.satansim.dataGlobal.economy.CataclysmSoulCosts;
 import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.domain.model.Interfaces.DavidStarInterface;
@@ -30,7 +30,7 @@ public class CataclysmManager implements CataclysmManagerInterface {
 
     @Override
     public String createCataclysm(String type, String name, int slot) {
-        if(SoulValuta.get_instance().isEnough(CataclysmCosts.getCost(name))) {
+        if(SoulValuta.get_instance().isEnough(CataclysmSoulCosts.getCost(name))) {
             DavidStarInterface star = starList.get(type);
             if (star.is_slotEmpty(slot)) {
                 CataclysmModel cata = CataclysmFactory.createCataclysm(type, name);

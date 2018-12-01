@@ -33,15 +33,15 @@ public final class CataclysmPresenter extends MvpPresenter<ActivityView> {
         //!!!!!!!!!!!!!!!!!!метод смены всадников!!!!!!!!!!!!!!!!!!
         switch (type) {
             case 0:
-                return CataclysmEnum.TYPE_1;
+                return CataclysmEnum.TYPE_RITUALS;
             case 1:
-                return CataclysmEnum.TYPE_2;
+                return CataclysmEnum.TYPE_HUNGER;
             case 2:
-                return CataclysmEnum.TYPE_3;
+                return CataclysmEnum.TYPE_PLAGUE;
             case 3:
-                return CataclysmEnum.TYPE_4;
+                return CataclysmEnum.TYPE_WAR;
             case 4:
-                return CataclysmEnum.TYPE_5;
+                return CataclysmEnum.TYPE_DEATH;
             default: return "ERROR";
         }
     }
