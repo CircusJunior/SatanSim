@@ -6,6 +6,9 @@ import circusjunior.satansim.features.cataclysm.Interface.ValutaInterface;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
 import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 import circusjunior.satansim.features.cataclysm.domain.model.CataclysmManager;
+import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
+
+import static circusjunior.satansim.dataGlobal.economy.CataclysmEnum.NUMBER_OF_CATACLYSM_IN_STAR;
 
 public final class CataclysmPresenter extends MvpPresenter<ActivityView> {
     private CataclysmManagerInterface managerInterface = CataclysmManager.getInstance();
@@ -44,5 +47,16 @@ public final class CataclysmPresenter extends MvpPresenter<ActivityView> {
                 return CataclysmEnum.TYPE_5;
             default: return "ERROR";
         }
+    }
+
+    public String[] refreshCataclysmActivity(String type){
+        CataclysmModel[] activeCataclysm;
+        activeCataclysm = managerInterface.getListCataclysmInSlots(type);
+        String[] nameCataclysm = new String[NUMBER_OF_CATACLYSM_IN_STAR];
+        for(int i=0; i<NUMBER_OF_CATACLYSM_IN_STAR; i++){
+            if(activeCataclysm[i] != null)
+                nameCataclysm[i] = activeCataclysm[i].getName();
+        }
+        return nameCataclysm;
     }
 }

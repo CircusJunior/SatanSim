@@ -6,13 +6,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import circusjunior.satansim.R;
 import circusjunior.satansim.dataGlobal.GameThread;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
 
 import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
+import circusjunior.satansim.features.cataclysm.domain.model.cataclysms.CataclysmModel;
 import circusjunior.satansim.features.cataclysm.presentation.timers.ValutaRefresh;
+
+import static circusjunior.satansim.dataGlobal.economy.CataclysmEnum.NUMBER_OF_CATACLYSM_IN_STAR;
 
 
 public class CataclysmActivity extends BaseActivity implements ActivityView {
@@ -31,6 +36,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
     private ValutaRefresh mRefresh;
 
     private String mTypeCataclysm;
+    private int type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         GameThread.get_instance();
 
         mTypeCataclysm = CataclysmEnum.TYPE_1;
+        type = 0;
 
         initView();
     }
@@ -51,7 +58,8 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
 
         refreshInfoActivity(currencySoul, cataclysmPresenter);
 
-        showView();
+
+        refreshActivity(type);
     }
 
     public void refreshInfoActivity(TextView soulView, CataclysmPresenter presenter) {    //обновление информации
@@ -69,12 +77,12 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
 
     public void initCataclismButton(){
         buttonCataclysm = new Button[buttonCataclysmQuantity];
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
 
         for(int i=0; i<buttonCataclysmQuantity; i++)
         {
-            final int slot = intent.getIntExtra("Slot", i);
-            final String name = intent.getStringExtra("Name"+Integer.toString(i));
+            //final int slot = intent.getIntExtra("Slot", i);
+            //final String name = intent.getStringExtra("Name"+Integer.toString(i));
 
             buttonCataclysm[i] = (Button) findViewById(buttonCataclysmId[i]);
             buttonCataclysm[i].setText(name);
@@ -94,8 +102,9 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
 
         for(int i=0; i<5; i++)
         {
-            buttonRiders[i] = (Button) findViewById(buttonRidersId[i]);
+            buttonRiders[i] = (Button) findViewById(buttonRidersId[i]); 
             final int type = i;
+
             buttonRiders[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -114,17 +123,28 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         for(int i=0; i<5;i++){
             if(i == type){
                 buttonRiders[i].setEnabled(false);
+
             } else {
                 buttonRiders[i].setEnabled(true);
             }
         }
-        //!!!!!!!!!!!!!!МЕТОД ОБНОВЛЕНИЯ АКТИВИТИ!!!!!!!!!!!!!!!!!!!!!
+        refreshActivity(type);
+    }
 
+    public void refreshActivity(int type){
+        String nameTypes = CataclysmEnum.getTypesList.get(type);
+
+        for (int i=0; i<5;i++) {
+            String[] nameCataclysm = cataclysmPresenter.refreshCataclysmActivity(nameTypes);
+            buttonCataclysm[i].setText(nameCataclysm[i]);
+        }
     }
 
     @Override
     public void showView() {    //запрос состаяния активити на момент ее загрузки
         //currencySoul.setText();     //нужна функция вовращающая кол-во "soul" в формате string
+
+
     }
 
 
