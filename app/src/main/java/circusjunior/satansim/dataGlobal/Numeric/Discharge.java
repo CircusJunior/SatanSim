@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Discharge {
+
     public static final int DIS_VALUE = 1000;
+    public static final String DEFAULT = "ERROR";
     public static final String HUNDRED ="";
     public static final String THOUSAND ="K";
     public static final String MILLION = "M";
@@ -36,7 +38,7 @@ public class Discharge {
             case HUNDRED:
                 return THOUSAND;
         }
-        return "";
+        return DEFAULT;
     }
 
     public static String getPrev(String discharge){
@@ -52,6 +54,6 @@ public class Discharge {
             case THOUSAND:
                 return HUNDRED;
         }
-        return "";
+        return DEFAULT;
     }
 }

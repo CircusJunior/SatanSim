@@ -18,11 +18,75 @@
     <string name="death">Death</string>
     <string name="war">War</string>
 
+
+
+    <!--Types-->
+    <string name="TYPE_RITUALS">Rituals</string>
+    <string name="TYPE_HUNGER">Hunger</string>
+    <string name="TYPE_PLAGUE">Plague</string>
+    <string name="TYPE_WAR">War</string>
+    <string name="TYPE_DEATH">Death</string>
+
+
     <!--Rituals-->
     <string name="RITUALS_1">Sacrifice</string>
     <string name="RITUALS_2">Sadom and Gamora</string>
     <string name="RITUALS_3">Greate depression</string>
-    <string name="RITUALS_4">Friday 13#44th</string>
+    <string name="RITUALS_4">Friday 13\'th</string>
     <string name="RITUALS_5">Valpurges night</string>
+    <string name="RITUALS_6">RITUALS_6</string>
+    <string name="RITUALS_7">RITUALS_7</string>
+    <string name="RITUALS_8">RITUALS_8</string>
+    <string name="RITUALS_9">RITUALS_9</string>
+    <string name="RITUALS_10">RITUALS_10</string>
 
+    <!--Hunger-->
+    <string name="HUNGER_1">HUNGER_6</string>
+    <string name="HUNGER_2">HUNGER_6</string>
+    <string name="HUNGER_3">HUNGER_6</string>
+    <string name="HUNGER_4">HUNGER_6</string>
+    <string name="HUNGER_5">HUNGER_6</string>
+    <string name="HUNGER_6">HUNGER_6</string>
+    <string name="HUNGER_7">HUNGER_7</string>
+    <string name="HUNGER_8">HUNGER_8</string>
+    <string name="HUNGER_9">HUNGER_9</string>
+    <string name="HUNGER_10">HUNGER_10</string>
+    
+    <!--Plague-->
+    <string name="PLAGUE_1">PLAGUE_6</string>
+    <string name="PLAGUE_2">PLAGUE_6</string>
+    <string name="PLAGUE_3">PLAGUE_6</string>
+    <string name="PLAGUE_4">PLAGUE_6</string>
+    <string name="PLAGUE_5">PLAGUE_6</string>
+    <string name="PLAGUE_6">PLAGUE_6</string>
+    <string name="PLAGUE_7">PLAGUE_7</string>
+    <string name="PLAGUE_8">PLAGUE_8</string>
+    <string name="PLAGUE_9">PLAGUE_9</string>
+    <string name="PLAGUE_10">PLAGUE_10</string>
+    
+    <!--War-->
+    <string name="WAR_1">WAR_6</string>
+    <string name="WAR_2">WAR_6</string>
+    <string name="WAR_3">WAR_6</string>
+    <string name="WAR_4">WAR_6</string>
+    <string name="WAR_5">WAR_6</string>
+    <string name="WAR_6">WAR_6</string>
+    <string name="WAR_7">WAR_7</string>
+    <string name="WAR_8">WAR_8</string>
+    <string name="WAR_9">WAR_9</string>
+    <string name="WAR_10">WAR_10</string>
+    
+    <!--Death-->
+    <string name="DEATH_1">DEATH_6</string>
+    <string name="DEATH_2">DEATH_6</string>
+    <string name="DEATH_3">DEATH_6</string>
+    <string name="DEATH_4">DEATH_6</string>
+    <string name="DEATH_5">DEATH_6</string>
+    <string name="DEATH_6">DEATH_6</string>
+    <string name="DEATH_7">DEATH_7</string>
+    <string name="DEATH_8">DEATH_8</string>
+    <string name="DEATH_9">DEATH_9</string>
+    <string name="DEATH_10">DEATH_10</string>
+    
+    <string name="ERROR">ERROR</string>
 </resources>

@@ -28,9 +28,11 @@ public class DifficultInt {
     }
 
     private void refreshActualDischarge(){
-        if(this.getDischarge(Discharge.getNext(actualDischarge))!=0){
-            actualDischarge=Discharge.getNext(actualDischarge);
+        String actual = Discharge.HUNDRED;
+        for(String dis:Discharge.DISCHARGE_LIST){
+            if(this.getDischarge(dis)!=0) actual=dis;
         }
+        this.actualDischarge =actual;
     }
 
     public void addInt(String discharge, int increment){
@@ -69,6 +71,7 @@ public class DifficultInt {
             minusInt(Discharge.getNext(discharge),1);
             value+=Discharge.DIS_VALUE-1;
         }
+        number.remove(discharge);
         number.put(discharge,value);
         refreshActualDischarge();
     }

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import circusjunior.satansim.R;
+import circusjunior.satansim.dataGlobal.Localize.Localisator;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
 import circusjunior.satansim.features.cataclysm.MvpPresenter;
 import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
@@ -69,7 +70,7 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
                 }
             });
         }
-        buttonCataclism[0].setText(R.string.RITUALS_1);
+        buttonCataclism[0].setText(Localisator.getLocalziseName(CataclysmEnum.RITUALS_1));
         buttonCataclism[1].setText(R.string.RITUALS_2);
         buttonCataclism[2].setText(R.string.RITUALS_3);
         buttonCataclism[3].setText(R.string.RITUALS_4);
