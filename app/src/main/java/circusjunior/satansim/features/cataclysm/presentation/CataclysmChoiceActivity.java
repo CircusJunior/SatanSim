@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import circusjunior.satansim.R;
 import circusjunior.satansim.dataGlobal.Localize.Localisator;
 import circusjunior.satansim.features.cataclysm.BaseActivity;
@@ -17,8 +20,6 @@ import circusjunior.satansim.dataGlobal.economy.CataclysmEnum;
 public class CataclysmChoiceActivity extends BaseActivity implements ActivityView {
 
     private Button[] buttonCataclism;
-    private int testQuantity = 5;
-    private String[] testEnum = {CataclysmEnum.RITUALS_1, CataclysmEnum.RITUALS_2, CataclysmEnum.RITUALS_3, CataclysmEnum.RITUALS_4, CataclysmEnum.RITUALS_5};
 
     private CataclysmPresenter cataclysmPresenter;
 
@@ -46,36 +47,29 @@ public class CataclysmChoiceActivity extends BaseActivity implements ActivityVie
     }
 
     public void initButton(LinearLayout root, ViewGroup.LayoutParams properties){
-
-        //!!!!!!!!!!!!!!!!! все нужно в цикле!!!!!!!!!!!!!!!!!!!
-
-        buttonCataclism = new Button[testQuantity];
-
         Intent intent = getIntent();
         final int slot = intent.getIntExtra("Slot", 0);
         final String type = intent.getStringExtra("Type");
 
-        for(int i=0; i<testQuantity; i++)
-        {
+        List<String> nameButton = CataclysmEnum.getCataclysmListByType(type);
+
+        buttonCataclism = new Button[nameButton.size()];
+
+        for(int i=0; i<nameButton.size(); i++) {
             buttonCataclism[i] = new Button(this);
             buttonCataclism[i].setGravity(Gravity.CENTER);
             root.addView(buttonCataclism[i], properties);
-            final String name = testEnum[i];
+            buttonCataclism[i].setText(Localisator.getLocalziseName(nameButton.get(i)));
+
+            final String name = nameButton.get(i);
 
             buttonCataclism[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //Button button = (Button)view;
-                    cataclysmPresenter.fromCataclysmChoiceActivityGoToCataclysmActivity(slot, cataclysmPresenter.createCataclysm(type, name ,slot));
+                    cataclysmPresenter.fromCataclysmChoiceActivityGoToCataclysmActivity(slot, cataclysmPresenter.createCataclysm(type, name, slot));
                 }
             });
         }
-        buttonCataclism[0].setText(Localisator.getLocalziseName(CataclysmEnum.RITUALS_1));
-        buttonCataclism[1].setText(R.string.RITUALS_2);
-        buttonCataclism[2].setText(R.string.RITUALS_3);
-        buttonCataclism[3].setText(R.string.RITUALS_4);
-        buttonCataclism[4].setText(R.string.RITUALS_5);
-
     }
 
     @Override

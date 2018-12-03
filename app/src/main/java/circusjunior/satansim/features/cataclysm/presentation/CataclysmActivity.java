@@ -45,7 +45,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
 
         GameThread.get_instance();
 
-        mTypeCataclysm = CataclysmEnum.TYPE_1;
+        mTypeCataclysm = CataclysmEnum.TYPE_RITUALS;
         type = 0;
 
         initView();
@@ -57,7 +57,6 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         initButton();
 
         refreshInfoActivity(currencySoul, cataclysmPresenter);
-
 
         refreshActivity(type);
     }
@@ -85,7 +84,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
             //final String name = intent.getStringExtra("Name"+Integer.toString(i));
 
             buttonCataclysm[i] = (Button) findViewById(buttonCataclysmId[i]);
-            buttonCataclysm[i].setText(name);
+            //buttonCataclysm[i].setText(name);
 
             final int finalI = i;
             buttonCataclysm[i].setOnClickListener(new View.OnClickListener() {
@@ -108,7 +107,7 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
             buttonRiders[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mTypeCataclysm = cataclysmPresenter.changeRider(type);
+                    mTypeCataclysm = CataclysmEnum.getTypesList.get(type);
                     changeActiveRider(type);
                 }
             });
@@ -123,7 +122,6 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         for(int i=0; i<5;i++){
             if(i == type){
                 buttonRiders[i].setEnabled(false);
-
             } else {
                 buttonRiders[i].setEnabled(true);
             }
@@ -135,19 +133,19 @@ public class CataclysmActivity extends BaseActivity implements ActivityView {
         String nameTypes = CataclysmEnum.getTypesList.get(type);
 
         for (int i=0; i<5;i++) {
-            String[] nameCataclysm = cataclysmPresenter.refreshCataclysmActivity(nameTypes);
-            buttonCataclysm[i].setText(nameCataclysm[i]);
+            int[] nameCataclysm = cataclysmPresenter.refreshCataclysmActivity(nameTypes);
+            if(nameCataclysm[i] != 0) {
+                buttonCataclysm[i].setText(nameCataclysm[i]);
+            }else{
+                buttonCataclysm[i].setText("");
+            }
         }
     }
 
     @Override
     public void showView() {    //запрос состаяния активити на момент ее загрузки
         //currencySoul.setText();     //нужна функция вовращающая кол-во "soul" в формате string
-
-
     }
-
-
 
     @Override
     public void showError(String message) {

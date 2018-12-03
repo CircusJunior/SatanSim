@@ -1,5 +1,6 @@
 package circusjunior.satansim.features.cataclysm.presentation;
 
+import circusjunior.satansim.dataGlobal.Localize.Localisator;
 import circusjunior.satansim.dataGlobal.Valuta.SoulValuta;
 import circusjunior.satansim.features.cataclysm.Interface.CataclysmManagerInterface;
 import circusjunior.satansim.features.cataclysm.Interface.ValutaInterface;
@@ -49,13 +50,13 @@ public final class CataclysmPresenter extends MvpPresenter<ActivityView> {
         }
     }
 
-    public String[] refreshCataclysmActivity(String type){
+    public int[] refreshCataclysmActivity(String type){
         CataclysmModel[] activeCataclysm;
         activeCataclysm = managerInterface.getListCataclysmInSlots(type);
-        String[] nameCataclysm = new String[NUMBER_OF_CATACLYSM_IN_STAR];
+        int[] nameCataclysm = new int[NUMBER_OF_CATACLYSM_IN_STAR];
         for(int i=0; i<NUMBER_OF_CATACLYSM_IN_STAR; i++){
             if(activeCataclysm[i] != null)
-                nameCataclysm[i] = activeCataclysm[i].getName();
+                nameCataclysm[i] = Localisator.getLocalziseName(activeCataclysm[i].getName());
         }
         return nameCataclysm;
     }

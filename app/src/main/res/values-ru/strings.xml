@@ -32,11 +32,11 @@
     <string name="RITUALS_3">Великая депресия</string>
     <string name="RITUALS_4">Пятница 13-ое</string>
     <string name="RITUALS_5">Вальпургиева ночь</string>
-    <string name="RITUALS_6">RITUALS_6</string>
-    <string name="RITUALS_7">RITUALS_7</string>
-    <string name="RITUALS_8">RITUALS_8</string>
-    <string name="RITUALS_9">RITUALS_9</string>
-    <string name="RITUALS_10">RITUALS_10</string>
+    <string name="RITUALS_6">Ритуал_6</string>
+    <string name="RITUALS_7">Ритуал_7</string>
+    <string name="RITUALS_8">Ритуал_8</string>
+    <string name="RITUALS_9">Ритуал_9</string>
+    <string name="RITUALS_10">Ритуал_10</string>
 
     <!--Hunger-->
     <string name="HUNGER_1">HUNGER_6</string>
